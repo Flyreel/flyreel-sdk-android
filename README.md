@@ -1,8 +1,8 @@
 # Flyreel SDK
 
-[![Platform](https://img.shields.io/badge/platform-Android-orange.svg)](https://github.com/Flyreel/flyreel-sdk-android)
+[![Platform](https://img.shields.io/badge/platform-Android-green.svg)](https://github.com/Flyreel/flyreel-sdk-android)
 [![Languages](https://img.shields.io/badge/language-Kotlin-orange.svg)](https://github.com/Flyreel/flyreel-sdk-android)
-[![GitHub release](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://flyreelsdk.jfrog.io/artifactory/flyreel-androidsdk)
+[![jFrog release](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fflyreelsdk.jfrog.io%2Fartifactory%2Fflyreel-androidsdk%2Flexisnexis%2Fflyreel%2Fandroid-sdk%2Fmaven-metadata.xml&label=jfrog)](https://flyreelsdk.jfrog.io/artifactory/flyreel-androidsdk)
 
 ## Requirements:
 
@@ -27,7 +27,7 @@ dependencyResolutionManagement {
 ```kotlin
 dependencies {
     // ...
-    implementation("lexisnexis.flyreel:android-sdk:1.0.0")
+    implementation("lexisnexis.flyreel:android-sdk:$flyreelVersion")
 }
 ```
 
@@ -52,7 +52,7 @@ allprojects {
 ```groovy
 dependencies {
     // ...
-    implementation 'lexisnexis.flyreel:android-sdk:1.0.0'
+    implementation "lexisnexis.flyreel:android-sdk:$flyreelVersion"
 }
 
 ```
@@ -123,13 +123,24 @@ fun openFlyreel(
 )
 ```
 
+### Custom fonts
+
+If you want to use custom fonts in the Flyreel chat, you have two options:
+
+- add your font **ttf** file to the assets folder
+- add your font **ttf** file to the res/font folder
+
+Then, you can use the font's name in the dashboard panel.
+For example, if you have added font **my_font.ttf** to the assets folder, you can use **my_font** as
+a font name in the Flyreel dashboard.
+
 ## Debug Logs
 
 Enable debug logging for troubleshooting purposes:
 
 ```kotlin
 Flyreel.enableLogs()
-````
+```
 
 ## Sandbox
 
