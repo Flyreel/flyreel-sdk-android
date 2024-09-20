@@ -142,6 +142,31 @@ Enable debug logging for troubleshooting purposes:
 Flyreel.enableLogs()
 ```
 
+## Flyreel status check
+You can manually check Flyreel status
+
+```kotlin
+///This function makes a network request to retrieve the status of Flyreel for the specified zip code and access code
+fun fetchFlyreelStatus(zipCode: String, accessCode: String, onSuccess: (FlyreelStatus) -> Unit, onError: (FlyreelError) -> Unit)
+```
+
+## Analytics
+
+```kotlin
+/// Subscribes to a stream of analytic events and handles each event with a provided callback.
+///
+/// This function observes a feed of analytic events from the SDK. When an event
+/// is received, the provided handler callback is called with the event as its argument.
+///
+/// - Parameters:
+///   - handler: A callback that is called with the analytic event emitted by the SDK.
+///     The callback takes a single parameter:
+///       - event: A `FlyreelAnalyticEvent` type that contains event's data.
+Flyreel.observeAnalyticEvents { event ->
+    YourAnalyticProvider.send(event)
+}
+```
+
 ## Sandbox
 
 Verify your implementation in the sandbox mode. Initialize Flyreel with an additional parameter:
