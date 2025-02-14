@@ -65,8 +65,6 @@ dependencies {
 
 To use the Flyreel SDK, you must provide a configuration with the following parameters:
 
-`settingsVersion`: Identifier of your remote SDK settings.
-
 `organizationId`: Identifier of your organization.
 
 Then you need to call `Flyreel.initalize()` method in your Application's onCreate() method. (Don't
@@ -80,7 +78,6 @@ class MyApplication : Application() {
 
         val configuration = FlyreelConfiguration(
             organizationId = "7d3899f1421a7650241516475",
-            settingsVersion = 1,
         )
         Flyreel.initialize(
             application = this,
@@ -174,7 +171,6 @@ Verify your implementation in the sandbox mode. Initialize Flyreel with an addit
 ```kotlin
 val configuration = FlyreelConfiguration(
     organizationId = "7d3899f1421a7650241516475",
-    settingsVersion = 1,
     environment = FlyreelEnvironment.Sandbox
 )
 
